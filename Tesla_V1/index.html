@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Vehículos eléctricos, energía solar y limpia | Tesla Colombia</title>
+  <meta name="description"
+    content="Tesla fabrica vehículos eléctricos. Reserva tu Model 3 o Model Y en Colombia." />
+  <link rel="icon" href="https://www.tesla.com/themes/custom/flavor_flavor/favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+  <!-- ── NAVIGATION ─────────────────────────────────────────── -->
+  <nav class="nav" id="main-nav" role="navigation" aria-label="Principal">
+
+    <!-- LEFT: Tesla Logo -->
+    <a href="index.html" class="nav__logo" aria-label="Tesla">
+      <svg class="nav__wordmark" viewBox="0 0 278 40" xmlns="http://www.w3.org/2000/svg">
+        <text x="0" y="32" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="600" letter-spacing="12" fill="currentColor">TESLA</text>
+      </svg>
+    </a>
+
+    <!-- CENTER: page links (solo Model Y y Model 3) -->
+    <ul class="nav__links" id="nav-links">
+      <li><a href="pages/modely/modely.html" class="nav__link">Model Y</a></li>
+      <li><a href="pages/model3/model3.html" class="nav__link">Model 3</a></li>
+    </ul>
+
+    <!-- RIGHT: icons -->
+    <div class="nav__actions">
+      <a href="#" class="nav__icon-btn" aria-label="Ayuda">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" />
+        </svg>
+      </a>
+      <button class="nav__icon-btn" id="btn-region" aria-label="Región">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+      </button>
+      <button class="nav__icon-btn" id="user-btn" aria-label="Mi cuenta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 2a5 5 0 110 10A5 5 0 0112 2zm0 12c5.33 0 8 2.67 8 4v2H4v-2c0-1.33 2.67-4 8-4z" />
+        </svg>
+      </button>
+      <!-- Mobile hamburger -->
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+  </nav>
+
+  <!-- Mobile slide menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu__backdrop" id="mobile-backdrop"></div>
+    <div class="mobile-menu__panel">
+      <button class="mobile-menu__close" id="mobile-close" aria-label="Cerrar menú">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="mobile-menu__links">
+        <a href="pages/modely/modely.html" class="mobile-menu__link">Model Y</a>
+        <a href="pages/model3/model3.html" class="mobile-menu__link">Model 3</a>
+        <hr class="mobile-menu__divider" />
+        <a href="#" class="mobile-menu__link mobile-menu__link--secondary">Tienda</a>
+        <a href="#" class="mobile-menu__link mobile-menu__link--secondary">Soporte</a>
+        <a href="#" class="mobile-menu__link mobile-menu__link--secondary" id="mobile-account-link">Cuenta</a>
+      </div>
+      <p class="mobile-menu__region">🌎 Colombia (ES)</p>
+    </div>
+  </div>
+
+  <!-- ── USER DRAWER ─────────────────────────────────────────── -->
+  <div class="drawer" id="user-drawer" aria-hidden="true">
+    <div class="drawer__backdrop" id="drawer-backdrop"></div>
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Cuenta de usuario">
+
+      <button class="drawer__close" id="drawer-close" aria-label="Cerrar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+
+      <!-- Login view -->
+      <div id="view-login">
+        <p class="drawer__eyebrow">Mi cuenta Tesla</p>
+        <h2 class="drawer__title">Iniciar sesión</h2>
+        <p class="drawer__sub">Accede para gestionar tu reserva y configuraciones.</p>
+        <form id="login-form" class="drawer-form" novalidate>
+          <div class="field">
+            <label for="inp-name">Nombre completo</label>
+            <input type="text" id="inp-name" placeholder="Juan Pérez" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="inp-email">Correo electrónico</label>
+            <input type="email" id="inp-email" placeholder="juan@email.com" autocomplete="email" required />
+          </div>
+          <p class="field-error" id="login-error" aria-live="polite"></p>
+          <button type="submit" class="dbtn dbtn--dark" id="btn-login">Continuar</button>
+        </form>
+        <p class="drawer__terms">Al continuar, aceptas los <a href="#">Términos de uso</a> de Tesla.</p>
+      </div>
+
+      <!-- Logged-in view -->
+      <div id="view-user" hidden>
+        <div class="user-avatar" id="user-avatar">J</div>
+        <p class="user-name" id="user-name">Juan Pérez</p>
+        <p class="user-email" id="user-email">juan@email.com</p>
+        <hr class="divider" />
+        <div id="user-reservation"></div>
+        <button class="dbtn dbtn--outline" id="btn-logout">Cerrar sesión</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── HERO: MODEL Y (primero, como en Tesla Colombia) ──────── -->
+  <section class="hero" id="hero-modely" aria-label="Tesla Model Y">
+    <div class="hero__bg"
+      style="background-image:url('https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-Y-Desktop-Global.jpg')">
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <h1 class="hero__model">Model Y</h1>
+      <p class="hero__price">Desde $119.990.000 COP</p>
+      <div class="hero__btns">
+        <a href="pages/modely/modely.html" class="hero-btn hero-btn--order" id="cta-my-order">Ordenar ahora</a>
+        <a href="pages/modely/modely.html" class="hero-btn hero-btn--info" id="cta-my-info">Conocer Model Y</a>
+      </div>
+    </div>
+    <div class="hero__scroll" aria-hidden="true">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <polyline points="6 9 12 15 18 9"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ── HERO: MODEL 3 ────────────────────────────────────────── -->
+  <section class="hero" id="hero-model3" aria-label="Tesla Model 3">
+    <div class="hero__bg"
+      style="background-image:url('https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-3-Desktop-LHD.jpg')">
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hero__content">
+      <h2 class="hero__model">Model 3</h2>
+      <p class="hero__price">Desde $114.990.000 COP</p>
+      <div class="hero__btns">
+        <a href="pages/model3/model3.html" class="hero-btn hero-btn--order" id="cta-m3-order">Ordenar ahora</a>
+        <a href="pages/model3/model3.html" class="hero-btn hero-btn--info" id="cta-m3-info">Conocer Model 3</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURES STRIP ────────────────────────────────────────── -->
+  <section class="features" id="features">
+    <div class="features__inner">
+      <div class="feature">
+        <div class="feature__icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3 class="feature__title">Carga rápida</h3>
+        <p class="feature__desc">Superchargers por toda Colombia. Hasta 275 km en 15 minutos.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <h3 class="feature__title">Seguridad 5★</h3>
+        <p class="feature__desc">Calificación de seguridad máxima en todas las categorías.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3 class="feature__title">Over-the-Air</h3>
+        <p class="feature__desc">Tu auto mejora con actualizaciones de software remotas.</p>
+      </div>
+      <div class="feature">
+        <div class="feature__icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3 class="feature__title">Piloto Automático</h3>
+        <p class="feature__desc">Conducción asistida avanzada con actualizaciones continuas.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ────────────────────────────────────────────────── -->
+  <footer class="footer" id="footer">
+    <div class="footer__inner">
+      <div class="footer__links">
+        <a href="#">Tesla © 2026</a>
+        <a href="#">Privacidad y legal</a>
+        <a href="#">Contacto</a>
+        <a href="#">Noticias</a>
+        <a href="#">Ubicaciones</a>
+      </div>
+      <div class="footer__region">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="opacity:.5;">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+        <span>Colombia (ES)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── TOASTS ─────────────────────────────────────────────── -->
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+
+  <script src="assets/js/store.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>

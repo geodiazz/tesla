@@ -1,0 +1,10 @@
+/* modely.css — Tesla Model Y · Overrides sobre global.css */
+
+.config-viz { background: #e8e8e8; }
+
+.color-name-label {
+  font-size: 13px;
+  font-weight: 400;
+  color: #636363;
+  margin-top: 2px;
+}

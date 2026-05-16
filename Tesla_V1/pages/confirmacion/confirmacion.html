@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Reserva Confirmada | Tesla Colombia</title>
+  <meta name="description" content="Tu reserva de Tesla ha sido confirmada. Gestiona y administra tu reserva en línea."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../../assets/css/global.css"/>
+  <link rel="stylesheet" href="confirmacion.css"/>
+</head>
+<body>
+
+<nav class="g-nav">
+  <a href="../../index.html" class="g-nav__logo" aria-label="Tesla — Inicio">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 278 40" fill="currentColor" class="g-nav__wordmark">
+      <text x="0" y="32" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="600" letter-spacing="12">TESLA</text>
+    </svg>
+  </a>
+  <span class="g-nav__title">Mi Reserva</span>
+  <div class="g-nav__right">
+    <a href="../../index.html" class="btn btn--ghost g-nav__back">← Inicio</a>
+  </div>
+</nav>
+
+<div class="conf-page">
+
+  <!-- Hero banner -->
+  <div class="conf-hero" id="conf-hero">
+    <div class="conf-checkmark">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+    <h1>¡Reserva Confirmada!</h1>
+    <p id="conf-subtitle">Tu Tesla está reservado. Te contactaremos pronto.</p>
+  </div>
+
+  <div class="conf-body">
+
+    <!-- Main card -->
+    <div class="conf-card" id="conf-card">
+
+      <!-- No reservation -->
+      <div id="no-reservation" hidden style="text-align:center;padding:40px 0;">
+        <p style="font-size:48px;margin-bottom:12px;">🚗</p>
+        <p style="font-size:18px;font-weight:700;margin-bottom:8px;">No tienes ninguna reserva activa</p>
+        <p style="font-size:14px;color:#636363;margin-bottom:24px;">Configura tu Tesla favorito y reserva en minutos.</p>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+          <a href="../../index.html" class="btn btn--primary">Ver Model 3</a>
+          <a href="../../index.html" class="btn btn--outline">Ver Model Y</a>
+        </div>
+      </div>
+
+      <!-- Reservation details -->
+      <div id="reservation-details">
+        <div class="conf-card__header">
+          <span class="conf-model-badge" id="model-badge">Tesla</span>
+          <div class="conf-res-id">ID: <strong id="res-id">—</strong></div>
+        </div>
+
+        <img id="conf-car-img"
+          src="https://digitalassets.tesla.com/tesla-contents/image/upload/f_auto,q_auto/Homepage-Model-Y-Desktop-Global.jpg"
+          alt="Tu Tesla" class="conf-car-img"/>
+
+        <!-- Performance stats -->
+        <div class="conf-stats" id="conf-stats"></div>
+
+        <div class="conf-grid">
+          <div class="conf-group">
+            <h3>Tu configuración</h3>
+            <div id="conf-spec-list"></div>
+          </div>
+          <div class="conf-group">
+            <h3>Datos del comprador</h3>
+            <div id="conf-user-list"></div>
+          </div>
+        </div>
+
+        <div class="conf-price-box">
+          <div id="conf-price-breakdown"></div>
+          <div class="conf-price-row conf-price-row--total">
+            <span>Total del vehículo</span>
+            <span id="conf-total">—</span>
+          </div>
+          <div class="conf-price-row" style="margin-top:8px;">
+            <span>💳 Anticipo pagado</span>
+            <span class="conf-deposit-badge">$1.000.000 COP</span>
+          </div>
+          <div class="conf-price-row">
+            <span>Saldo restante</span>
+            <span id="conf-remaining" style="font-weight:600;">—</span>
+          </div>
+        </div>
+
+        <div class="conf-info-grid">
+          <div class="conf-info-item">
+            <div class="icon">📅</div>
+            <div class="lbl">Fecha de reserva</div>
+            <div class="val" id="conf-date">—</div>
+          </div>
+          <div class="conf-info-item">
+            <div class="icon">📍</div>
+            <div class="lbl">Ciudad</div>
+            <div class="val" id="conf-city">—</div>
+          </div>
+          <div class="conf-info-item">
+            <div class="icon">✅</div>
+            <div class="lbl">Estado</div>
+            <div class="val" style="color:#1a7f37;">En proceso</div>
+          </div>
+        </div>
+
+        <div class="conf-policy">
+          <strong>Política de cancelación:</strong> Puedes cancelar tu reserva en cualquier momento antes de la entrega y recibirás el reembolso completo del anticipo en 5–10 días hábiles.
+        </div>
+
+        <div class="conf-actions">
+          <button class="btn btn--outline" id="cancel-btn">Cancelar reserva</button>
+          <a href="../../index.html" class="btn btn--primary">Explorar más modelos</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Next steps -->
+    <div class="conf-next-steps">
+      <h2>¿Qué sigue?</h2>
+      <div class="conf-steps-grid">
+        <div class="conf-step">
+          <div class="conf-step__icon">📧</div>
+          <h4>Confirmación por email</h4>
+          <p>Recibirás todos los detalles de tu reserva en los próximos minutos.</p>
+        </div>
+        <div class="conf-step">
+          <div class="conf-step__icon">📞</div>
+          <h4>Contacto del asesor</h4>
+          <p>Un asesor Tesla se comunicará contigo en 24–48 horas.</p>
+        </div>
+        <div class="conf-step">
+          <div class="conf-step__icon">🚗</div>
+          <h4>Entrega estimada</h4>
+          <p>El tiempo estimado de entrega es de 4–8 semanas dependiendo de disponibilidad.</p>
+        </div>
+        <div class="conf-step">
+          <div class="conf-step__icon">⚡</div>
+          <h4>Prepara tu hogar</h4>
+          <p>Te ayudamos a instalar tu cargador Wall Connector antes de la entrega.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Cancel dialog -->
+<div class="cancel-overlay" id="cancel-overlay">
+  <div class="cancel-dialog">
+    <h3>¿Cancelar tu reserva?</h3>
+    <p>Se reembolsará el anticipo de <strong>$1.000.000 COP</strong> en 5–10 días hábiles. Esta acción no se puede deshacer.</p>
+    <div class="cancel-dialog__btns">
+      <button class="btn btn--outline" id="cancel-no" style="flex:1;">Mantener reserva</button>
+      <button class="btn btn--red" id="cancel-yes" style="flex:1;">Sí, cancelar</button>
+    </div>
+  </div>
+</div>
+
+<div class="g-toasts" id="toasts"></div>
+<script src="../../assets/js/store.js"></script>
+<script src="confirmacion.js"></script>
+</body>
+</html>

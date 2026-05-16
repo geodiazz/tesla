@@ -1,0 +1,12 @@
+/* model3.css — Tesla Model 3 · Overrides sobre global.css */
+
+/* Imagen de fondo del config-viz para Model 3 */
+.config-viz { background: #e8e8e8; }
+
+/* Selector de color mostrando el nombre del color */
+.color-name-label {
+  font-size: 13px;
+  font-weight: 400;
+  color: #636363;
+  margin-top: 2px;
+}
